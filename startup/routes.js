@@ -6,7 +6,12 @@ const topics = require("../routes/topicRoutes");
 const users = require("../routes/userRoutes");
 
 module.exports = function (app) {
-  app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+  app.use(
+    cors({
+      origin: "https://dsa-sheet-app-client.onrender.com",
+      credentials: true,
+    })
+  );
   app.use(express.json());
 
   app.use("/api/problems", problems);
